@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc {
+  width: 400px;
+  height: 550px;
+  background-color: #909090;
+  padding: 20px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 8px;
+  grid-template-areas:
+    "screen screen screen screen"
+    "screen screen screen screen"
+    "clear clear delete delete"
+    "seven eight nine divi"
+    "four five six multi"
+    "one two three sub"
+    "deci zed equal add";
+}
+
+.screen {
+  background-color: #ffffff;
+  width: 100%;
+  grid-area: screen;
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: #ffffff;
+  padding: 8px;
+  margin: 5px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* BUTTON CLASSES */
+.screen {
+  grid-area: screen;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.delete {
+  grid-area: delete;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.zero {
+  grid-area: zed;
+}
+
+.deci {
+  grid-area: deci;
+}
+
+.divi {
+  grid-area: divi;
+}
+
+.multi {
+  grid-area: multi;
+}
+
+.add {
+  grid-area: add;
+}
+
+.sub {
+  grid-area: sub;
+}
+
+.equal {
+  grid-area: equal;
+}
