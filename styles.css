@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap");
+
 *,
 *::before,
 *::after {
@@ -13,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 .calc {
@@ -35,32 +38,43 @@
     "deci zed equal add";
 }
 
+.screen,
+.btn {
+  border-radius: 8px;
+  border: solid #202020 1px;
+  height: 90%;
+}
+
 .screen {
-  background-color: #ffffff;
+  background-color: #d8d8d8;
   width: 100%;
   grid-area: screen;
-  border-radius: 8px;
 }
 
 .btn {
-  background-color: #ffffff;
+  background-color: #d8d8d8;
   padding: 8px;
   margin: 5px;
   width: 100%;
-  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
-/* BUTTON CLASSES */
+/* BUTTON/SCREEN CLASSES */
 .screen {
   grid-area: screen;
 }
 
 .clear {
   grid-area: clear;
+  background-color: rgb(248, 120, 120);
 }
 
 .delete {
   grid-area: delete;
+  background-color: rgb(125, 125, 255);
 }
 
 .one {
