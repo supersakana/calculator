@@ -11,7 +11,13 @@
 .main {
   height: 100vh;
   width: 100%;
-  background-color: #202020;
+  background: rgb(0, 153, 255);
+  background: linear-gradient(
+    142deg,
+    rgba(0, 153, 255, 1) 25%,
+    rgba(4, 4, 195, 1) 55%,
+    rgba(0, 13, 121, 1) 82%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +29,9 @@
   height: 550px;
   background-color: #909090;
   padding: 20px;
+  border: solid #000 1px;
   border-radius: 8px;
+  box-shadow: 3px 3px 5px #202020;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(7, 1fr);
@@ -60,21 +68,51 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  box-shadow: 1px 1px 2px #202020;
+}
+
+.btn:hover {
+  background-color: #ffffff;
 }
 
 /* BUTTON/SCREEN CLASSES */
 .screen {
   grid-area: screen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#top-text,
+#bottom-text {
+  margin-right: 10px;
+}
+
+#top-text {
+  font-size: 1.5rem;
+}
+
+#bottom-text {
+  font-size: 3rem;
 }
 
 .clear {
   grid-area: clear;
   background-color: rgb(248, 120, 120);
 }
+.clear:hover {
+  background-color: rgb(243, 73, 73);
+}
 
 .delete {
   grid-area: delete;
   background-color: rgb(125, 125, 255);
+}
+
+.delete:hover {
+  background-color: rgb(101, 101, 251);
 }
 
 .one {
