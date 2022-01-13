@@ -29,9 +29,6 @@ const equalBtn = document.querySelector('.equal');
 
 // ------------------------------
 // EVENTS
-oneBtn.addEventListener('click', ()=>{
-     bottomText.textContent = '1'
-    });
 
 // ------------------------------
 // FUNCTIONS
