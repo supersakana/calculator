@@ -3,15 +3,22 @@
 
 let topText = document.getElementById('top-text');
 let bottomText = document.getElementById('bottom-text');
-let btns = document.querySelectorAll('.btn')
-
+let numBtn = document.querySelectorAll('.num');
+let clearBtn = document.querySelector('.clear');
 
 // ------------------------------
 // EVENTS
-btns.forEach(btn => {
-    btn.addEventListener('click', function(){
-        bottomText.innerText += btn.value;
+
+// Displays number on the calc screen
+numBtn.forEach(num => {
+    num.addEventListener('click', () => {
+        bottomText.innerText += num.value;
     })
+})
+
+// Clears the screen
+clearBtn.addEventListener('click',() => {
+    bottomText.innerHTML = '';
 })
 
 // ------------------------------
@@ -21,7 +28,6 @@ btns.forEach(btn => {
 function test(){
     console.log('testy')
 }
-
 
 // ADD
 function add(a, b){
