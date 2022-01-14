@@ -10,11 +10,9 @@ let btns = document.querySelectorAll('.btn')
 // EVENTS
 btns.forEach(btn => {
     btn.addEventListener('click', function(){
-        bottomText.innerText = btn.value;
+        bottomText.innerText += btn.value;
     })
 })
-
-
 
 // ------------------------------
 // FUNCTIONS
@@ -53,11 +51,15 @@ function operate(operator, a, b){
    switch(operator){
     case '+':
         add(a, b);
+        break;
     case '-':
         subtract(a, b);
+        break;
     case '*':
         multiply(a, b);
+        break;
     case '/':
         divide(a, b);
+        break;
    }
 }
