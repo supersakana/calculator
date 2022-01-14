@@ -3,10 +3,17 @@
 
 let topText = document.getElementById('top-text');
 let bottomText = document.getElementById('bottom-text');
+let btns = document.querySelectorAll('.btn')
 
 
 // ------------------------------
 // EVENTS
+btns.forEach(btn => {
+    btn.addEventListener('click', function(){
+        bottomText.innerText = btn.value;
+    })
+})
+
 
 
 // ------------------------------
@@ -14,7 +21,7 @@ let bottomText = document.getElementById('bottom-text');
 
 // TEST
 function test(){
-    bottomText.innerText = btnOne.value;
+    console.log('testy')
 }
 
 
