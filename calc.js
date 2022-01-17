@@ -25,12 +25,9 @@ numBtn.forEach(num => {
 //When Operator is pressed
 operBtn.forEach(oper => {
     oper.addEventListener('click', () =>{
-
         let param1 = bottomText.innerText;
         topText.innerText = param1;
         newOper = oper.value
-        // topOper.innerText = oper.value;
-
         bottomText.innerText = 0;
         newNum = [];
     })
@@ -42,18 +39,18 @@ operBtn.forEach(oper => {
         let param1 = topText.innerText;
         let param2 = bottomText.innerText;
         let param3 = newOper;
-        console.log(param1, param2, param3);
-
-        // operate(param3, param1, param2);
-
+        operate(param1, param2, param3);
+        topText.innerText = ''
+        bottomText.innerText = total
     })
 
     // Clears calculator
     clearBtn.addEventListener('click',() => {
         newNum = [];
-        topText.innerText = '';
         newOper = '';
+        topText.innerText = '';
         bottomText.innerText = 0;
+        total = 0;
     })
 
 // ------------------------------
@@ -61,40 +58,40 @@ operBtn.forEach(oper => {
 
 // ADD
 function add(a, b){
-    return a + b;
+    return total = a + b;
 }
 
 // SUBTRACT
 function subtract(a, b){
-    return a - b;
+    return total = a - b;
 }
 
 // MULTIPLY
 
 function multiply(a, b){
-    return  a * b;
+    return  total = a * b;
 }
 
 // DIVIDE
 function divide(a, b){
-    return a / b;
+    return total = a / b;
 }
 
 //OPERATOR
-function operate(operator, a, b){
+function operate(a, b, operator){
     a = Number(a);
     b = Number(b);
    switch(operator){
-    case '+':
+    case ' + ':
         add(a, b);
         break;
-    case '-':
+    case ' - ':
         subtract(a, b);
         break;
-    case '*':
+    case ' * ':
         multiply(a, b);
         break;
-    case '/':
+    case ' ÷ ':
         divide(a, b);
         break;
    }
