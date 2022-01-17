@@ -85,16 +85,12 @@
   gap: 10px;
 }
 
-#top-operator,
+#top-text,
 #bottom-text {
   margin-right: 10px;
 }
 
 #top-text {
-  font-size: 1.5rem;
-}
-
-#top-operator {
   font-size: 1.5rem;
 }
 

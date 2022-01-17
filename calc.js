@@ -2,13 +2,14 @@
 // VARIABLES
 
 let topText = document.getElementById('top-text');
-let topOper = document.getElementById('top-operator');
 let bottomText = document.getElementById('bottom-text');
 let numBtn = document.querySelectorAll('.num');
 let operBtn = document.querySelectorAll('.oper');
 let equalBtn = document.querySelector('.equal');
 let clearBtn = document.querySelector('.clear');
 let newNum = [];
+let newOper = ''
+let total = 0;
 
 // ------------------------------
 // EVENTS
@@ -25,9 +26,10 @@ numBtn.forEach(num => {
 operBtn.forEach(oper => {
     oper.addEventListener('click', () =>{
 
-        param1 = bottomText.innerText;
+        let param1 = bottomText.innerText;
         topText.innerText = param1;
-        topOper.innerText = oper.value;
+        newOper = oper.value
+        // topOper.innerText = oper.value;
 
         bottomText.innerText = 0;
         newNum = [];
@@ -39,17 +41,18 @@ operBtn.forEach(oper => {
         
         let param1 = topText.innerText;
         let param2 = bottomText.innerText;
-        let param3 = topOper.innerText;
+        let param3 = newOper;
+        console.log(param1, param2, param3);
 
-        operate(param3, param1, param2);
+        // operate(param3, param1, param2);
 
     })
 
-    // Clears the screen
+    // Clears calculator
     clearBtn.addEventListener('click',() => {
         newNum = [];
         topText.innerText = '';
-        topOper.innerText = '';
+        newOper = '';
         bottomText.innerText = 0;
     })
 
