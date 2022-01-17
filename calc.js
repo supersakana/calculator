@@ -41,8 +41,8 @@ operBtn.forEach(oper => {
         let param2 = bottomText.innerText;
         let param3 = topOper.innerText;
 
+        operate(param3, param1, param2);
 
-        console.log(param1 + " " + param2 + " " + param3);
     })
 
     // Clears the screen
