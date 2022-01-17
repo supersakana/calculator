@@ -4,7 +4,10 @@
 let topText = document.getElementById('top-text');
 let bottomText = document.getElementById('bottom-text');
 let numBtn = document.querySelectorAll('.num');
+let operBtn = document.querySelectorAll('.oper');
+let equalBtn = document.querySelector('.equal');
 let clearBtn = document.querySelector('.clear');
+let newNum = []
 
 // ------------------------------
 // EVENTS
@@ -12,22 +15,36 @@ let clearBtn = document.querySelector('.clear');
 // Displays number on the calc screen
 numBtn.forEach(num => {
     num.addEventListener('click', () => {
-        bottomText.innerText += num.value;
+        newNum += num.value;
+        bottomText.innerText = newNum;
     })
+})
+
+//When Operator is pressed
+operBtn.forEach(oper => {
+    oper.addEventListener('click', () =>{
+        param1 = bottomText.innerText;
+        topText.innerText = param1 + oper.value;
+
+        bottomText.innerText = 0;
+        newNum = [];
+    })
+})
+
+// When (=) is pressed
+equalBtn.addEventListener('click', () => {
+    console.log('test')
 })
 
 // Clears the screen
 clearBtn.addEventListener('click',() => {
-    bottomText.innerHTML = '';
+    newNum = [];
+    topText.innerText = '';
+    bottomText.innerText = 0;
 })
 
 // ------------------------------
 // FUNCTIONS
-
-// TEST
-function test(){
-    console.log('testy')
-}
 
 // ADD
 function add(a, b){
