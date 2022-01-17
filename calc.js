@@ -2,12 +2,13 @@
 // VARIABLES
 
 let topText = document.getElementById('top-text');
+let topOper = document.getElementById('top-operator');
 let bottomText = document.getElementById('bottom-text');
 let numBtn = document.querySelectorAll('.num');
 let operBtn = document.querySelectorAll('.oper');
 let equalBtn = document.querySelector('.equal');
 let clearBtn = document.querySelector('.clear');
-let newNum = []
+let newNum = [];
 
 // ------------------------------
 // EVENTS
@@ -23,8 +24,10 @@ numBtn.forEach(num => {
 //When Operator is pressed
 operBtn.forEach(oper => {
     oper.addEventListener('click', () =>{
+
         param1 = bottomText.innerText;
-        topText.innerText = param1 + oper.value;
+        topText.innerText = param1;
+        topOper.innerText = oper.value;
 
         bottomText.innerText = 0;
         newNum = [];
@@ -32,16 +35,23 @@ operBtn.forEach(oper => {
 })
 
 // When (=) is pressed
-equalBtn.addEventListener('click', () => {
-    console.log('test')
-})
+    equalBtn.addEventListener('click', () => {
+        
+        let param1 = topText.innerText;
+        let param2 = bottomText.innerText;
+        let param3 = topOper.innerText;
 
-// Clears the screen
-clearBtn.addEventListener('click',() => {
-    newNum = [];
-    topText.innerText = '';
-    bottomText.innerText = 0;
-})
+
+        console.log(param1 + " " + param2 + " " + param3);
+    })
+
+    // Clears the screen
+    clearBtn.addEventListener('click',() => {
+        newNum = [];
+        topText.innerText = '';
+        topOper.innerText = '';
+        bottomText.innerText = 0;
+    })
 
 // ------------------------------
 // FUNCTIONS
