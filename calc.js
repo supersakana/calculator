@@ -35,12 +35,13 @@ operBtn.forEach(oper => {
 
 // When (=) is pressed
     equalBtn.addEventListener('click', () => {
-        
         let param1 = topText.innerText;
         let param2 = bottomText.innerText;
         let param3 = newOper;
         operate(param1, param2, param3);
         topText.innerText = ''
+        newNum = [];
+        topText.innerText = param1 + param3 + param2;
         bottomText.innerText = total
     })
 
