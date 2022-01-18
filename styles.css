@@ -9,7 +9,7 @@
 }
 
 .main {
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background: rgb(42, 42, 42);
   /* background */
@@ -17,6 +17,10 @@
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+}
+
+footer {
+  height: 5vh;
 }
 
 .calc {
@@ -81,19 +85,20 @@
   gap: 10px;
 }
 
-#top-text,
-#bottom-text {
+#top-display,
+#bottom-display {
   margin-right: 10px;
 }
 
-#top-text {
+#top-display {
   font-size: 1.5rem;
 }
 
-#bottom-text {
+#bottom-display {
   font-size: 3rem;
 }
 
+/* Grid Item Styles */
 .clear {
   grid-area: clear;
   background-color: rgb(248, 120, 120);

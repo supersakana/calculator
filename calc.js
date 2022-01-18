@@ -1,8 +1,8 @@
 // ------------------------------
 // VARIABLES
 
-let topText = document.getElementById('top-text');
-let bottomText = document.getElementById('bottom-text');
+let topDisplay = document.getElementById('top-display');
+let bottomDisplay = document.getElementById('bottom-display');
 let numBtn = document.querySelectorAll('.num');
 let operBtn = document.querySelectorAll('.oper');
 let equalBtn = document.querySelector('.equal');
@@ -18,39 +18,39 @@ let total = 0;
 numBtn.forEach(num => {
     num.addEventListener('click', () => {
         newNum += num.value;
-        bottomText.innerText = newNum;
+        bottomDisplay.innerText = newNum;
     })
 })
 
 //When Operator is pressed
 operBtn.forEach(oper => {
     oper.addEventListener('click', () =>{
-        let param1 = bottomText.innerText;
-        topText.innerText = param1;
+        let param1 = bottomDisplay.innerText;
+        topDisplay.innerText = param1;
         newOper = oper.value
-        bottomText.innerText = 0;
+        bottomDisplay.innerText = 0;
         newNum = [];
     })
 })
 
 // When (=) is pressed
     equalBtn.addEventListener('click', () => {
-        let param1 = topText.innerText;
-        let param2 = bottomText.innerText;
+        let param1 = topDisplay.innerText;
+        let param2 = bottomDisplay.innerText;
         let param3 = newOper;
         operate(param1, param2, param3);
-        topText.innerText = ''
+        topDisplay.innerText = ''
         newNum = [];
-        topText.innerText = param1 + param3 + param2;
-        bottomText.innerText = total
+        topDisplay.innerText = param1 + param3 + param2;
+        bottomDisplay.innerText = total
     })
 
     // Clears calculator
     clearBtn.addEventListener('click',() => {
         newNum = [];
         newOper = '';
-        topText.innerText = '';
-        bottomText.innerText = 0;
+        topDisplay.innerText = '';
+        bottomDisplay.innerText = 0;
         total = 0;
     })
 
