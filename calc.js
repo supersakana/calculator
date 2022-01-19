@@ -10,6 +10,9 @@ let clearBtn = document.querySelector('.clear');
 let newNum = [];
 let newOper = ''
 let total = 0;
+let param1 = ''
+let param2 = ''
+let param3 = ''
 
 // ------------------------------
 // EVENTS
@@ -24,24 +27,28 @@ numBtn.forEach(num => {
 
 //When Operator is pressed
 operBtn.forEach(oper => {
-    oper.addEventListener('click', () =>{
-        let param1 = bottomDisplay.innerText;
-        topDisplay.innerText = param1;
-        newOper = oper.value
+    oper.addEventListener('click', () => {
+        param1 = bottomDisplay.innerText;
+        param2 = topDisplay.innerText
+        param3 = oper.value
+        operate(param1, param2, param3);
+
+        topDisplay.innerText = total;
         bottomDisplay.innerText = 0;
+        newOper = oper.value
         newNum = [];
     })
 })
 
 // When (=) is pressed
     equalBtn.addEventListener('click', () => {
-        let param1 = topDisplay.innerText;
-        let param2 = bottomDisplay.innerText;
-        let param3 = newOper;
+        param1 = topDisplay.innerText;
+        param2 = bottomDisplay.innerText;
+        param3 = newOper;
         operate(param1, param2, param3);
         topDisplay.innerText = ''
         newNum = [];
-        topDisplay.innerText = param1 + param3 + param2;
+        topDisplay.innerText = '';
         bottomDisplay.innerText = total
     })
 
@@ -80,6 +87,20 @@ function divide(a, b){
 
 //OPERATOR
 function operate(a, b, operator){
+    if(b == '' && operator == ' ÷ ' || b == '' && operator == ' * '){
+        b = 1;
+    }
+
+    if( operator == ' - ' && b != ''){
+        a = topDisplay.innerText;
+        b = bottomDisplay.innerText;
+    }
+
+    if( operator == ' ÷ ' && b != 1){
+        a = topDisplay.innerText;
+        b = bottomDisplay.innerText;
+    }
+        
     a = Number(a);
     b = Number(b);
    switch(operator){
