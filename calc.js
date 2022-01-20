@@ -4,6 +4,7 @@
 let topDisplay = document.getElementById('top-display');
 let bottomDisplay = document.getElementById('bottom-display');
 let numBtn = document.querySelectorAll('.num');
+let deciBtn = document.querySelector('.deci')
 let operBtn = document.querySelectorAll('.oper');
 let equalBtn = document.querySelector('.equal');
 let clearBtn = document.querySelector('.clear');
@@ -55,10 +56,13 @@ equalBtn.addEventListener('click', () => {
     bottomDisplay.innerText = total
     })
 
+
+// Decimal can only be clicked once
+deciBtn.addEventListener('click', deciClick)
+
 // Deletes single value 
 deleteBtn.addEventListener('click', deleteMe);
     
-
 // Clears calculator
 clearBtn.addEventListener('click', clear);
 
@@ -139,9 +143,10 @@ function clear(){
         topDisplay.innerText = '';
         bottomDisplay.innerText = 0;
         total = 0;
+        deciBtn.disabled = false;
 }
 
-// DIGIT LIMIT
+// TO BE CONTINUED... DIGIT LIMIT
 function digitLimit(number){
     numArr = Array.from(number);
 
@@ -150,6 +155,12 @@ function digitLimit(number){
     } else {
         return number
     }
-    
-    
 }
+
+// DECIMAL{
+ function deciClick(){
+    newNum += deciBtn.value;
+    deciBtn.disabled = true;
+    bottomDisplay.innerText = newNum;
+
+    }
