@@ -36,10 +36,11 @@ operBtn.forEach(oper => {
         param3 = oper.value
         operate(param1, param2, param3);
 
-        topDisplay.innerText = total;
+        topDisplay.innerText = digitLimit(total);
         bottomDisplay.innerText = 0;
         newOper = oper.value
         newNum = [];
+        deciBtn.disabled = false;
     })
 })
 
@@ -49,11 +50,12 @@ equalBtn.addEventListener('click', () => {
     param2 = bottomDisplay.innerText;
     param3 = newOper;
     operate(param1, param2, param3);
-    // total = digitLimit(total)
+
 
     newNum = [];
     topDisplay.innerText = '';
-    bottomDisplay.innerText = total
+    bottomDisplay.innerText = digitLimit(total);
+    deciBtn.disabled = false;
     })
 
 
@@ -129,11 +131,11 @@ function operate(a, b, operator){
    }
 }
 
-// DELETE
+//// TO BE CONTINUED... DELETE
 function deleteMe() {
-    newNum = Array.from(bottomDisplay.innerText);
-    newNum.pop();
-    bottomDisplay.innerText = newNum.join("")  
+    let deleted = bottomDisplay.innerText.slice(0, -1);
+    bottomDisplay.innerText = deleted;
+    newNum = deleted
 }
 
 // CLEAR
@@ -148,19 +150,18 @@ function clear(){
 
 // TO BE CONTINUED... DIGIT LIMIT
 function digitLimit(number){
-    numArr = Array.from(number);
-
-    if(numArr.length >= 11){
-        return number.toFixed(2);
-    } else {
-        return number
+    numArr = Array.from(number.toString());
+        if(numArr.length >= 10){
+        return number.toFixed(10);
+        } else {
+            return number
+        }
     }
-}
+
 
 // DECIMAL{
  function deciClick(){
     newNum += deciBtn.value;
     deciBtn.disabled = true;
     bottomDisplay.innerText = newNum;
-
     }
