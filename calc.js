@@ -33,12 +33,17 @@ operBtn.forEach(oper => {
     oper.addEventListener('click', () => {
         param1 = bottomDisplay.innerText;
         param2 = topDisplay.innerText
-        param3 = oper.value
-        operate(param1, param2, param3);
-
+        if(param3 == ''){
+            param3 = oper.value;
+            operate(param1, param2, param3);
+            newOper = param3
+        } else {
+            operate(param1, param2, param3);
+            param3 = oper.value;
+            newOper = param3
+        }
         topDisplay.innerText = digitLimit(total);
         bottomDisplay.innerText = 0;
-        newOper = oper.value
         newNum = [];
         deciBtn.disabled = false;
     })
@@ -50,7 +55,6 @@ equalBtn.addEventListener('click', () => {
     param2 = bottomDisplay.innerText;
     param3 = newOper;
     operate(param1, param2, param3);
-
 
     newNum = [];
     topDisplay.innerText = '';
@@ -129,12 +133,18 @@ function operate(a, b, operator){
         divide(a, b);
         break;
    }
+   console.log(a, b, operator)
 }
 
-//// TO BE CONTINUED... DELETE
+// DELETE
 function deleteMe() {
     let deleted = bottomDisplay.innerText.slice(0, -1);
     bottomDisplay.innerText = deleted;
+    for(let i = 0; i < deleted.length; i++){
+        if(deleted[i] = '.'){
+            deciBtn.disabled = false;
+        }
+    }
     newNum = deleted
 }
 
@@ -148,7 +158,7 @@ function clear(){
         deciBtn.disabled = false;
 }
 
-// TO BE CONTINUED... DIGIT LIMIT
+// DIGIT LIMIT
 function digitLimit(number){
     numArr = Array.from(number.toString());
         if(numArr.length >= 10){
@@ -159,7 +169,7 @@ function digitLimit(number){
     }
 
 
-// DECIMAL{
+// DECIMAL
  function deciClick(){
     newNum += deciBtn.value;
     deciBtn.disabled = true;
