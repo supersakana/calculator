@@ -31,7 +31,7 @@ footer {
   gap: 1rem;
   color: #fff;
   font-family: "Montserrat", sans-serif;
-  background-color: #202020;
+  background-color: var(--secondary-color);
   z-index: 1;
 }
 
