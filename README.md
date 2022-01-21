@@ -2,6 +2,6 @@ This is just going to be a simple calculator project to demonstrate my HTML, CSS
 
 Special shout out to The Odin Project for the criteria.
 
-Here is a preview of my work: https://github.com/supersakana/calculator
+Here is a preview of my work: https://supersakana.github.io/calculator/
 
 Enjoy!
