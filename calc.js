@@ -161,13 +161,12 @@ function clear(){
 // DIGIT LIMIT
 function digitLimit(number){
     numArr = Array.from(number.toString());
-        if(numArr.length >= 10){
-        return number.toFixed(10);
+        if(numArr.length >= 9){
+        return number.toFixed(9);
         } else {
             return number
         }
     }
-
 
 // DECIMAL
  function deciClick(){
